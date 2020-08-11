@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'info',
-	description: 'Displays member information.',
-	execute(message, args) {
-		message.channel.send(`Username: ${message.author.username}\nID: ${message.author.id}`);
+	description: 'Display info about yourself.',
+	execute(message) {
+		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	},
 };

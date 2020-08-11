@@ -16,6 +16,7 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
 	console.log('Ready!');
+	client.user.setActivity(`Use m!help.`);
 });
 
 client.on('message', message => {

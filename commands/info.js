@@ -1,7 +1,11 @@
 module.exports = {
 	name: 'info',
-	description: 'Display info about yourself.',
+	description: 'Display info about a member.',
 	execute(message) {
-		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		if (!message.mentions.users.size) {
+			return message.channel.send(`Username: ${message.author.username}\nID: ${message.author.id}`);
+		}
+		const user = message.mentions.users.first();
+		return message.channel.send(`Username: ${user.username}\nID: ${user.id}`);
 	},
 };

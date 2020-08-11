@@ -1,0 +1,22 @@
+{
+  "name": "apollo",
+  "version": "1.0.0",
+  "description": "A JavaScript Discord Bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DakshKalley/Apollo.git"
+  },
+  "author": "Daksh Kalley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DakshKalley/Apollo/issues"
+  },
+  "homepage": "https://github.com/DakshKalley/Apollo#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}

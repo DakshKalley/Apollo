@@ -14,6 +14,7 @@ module.exports = class KickCommand extends Command {
 	}
 
 	run(message) {
-		return message.say('Boop!');
+		const member = message.mentions.members.first();
+		member.kick();
 	}
 };

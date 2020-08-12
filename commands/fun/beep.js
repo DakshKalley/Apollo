@@ -4,7 +4,7 @@ module.exports = class BeepCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'beep',
-			group: 'default',
+			group: 'fun',
 			memberName: 'beep',
 			description: 'Checks if Apollo is online.',
 			throttling: {
@@ -15,6 +15,6 @@ module.exports = class BeepCommand extends Command {
 	}
 
 	run(message) {
-		return message.say('Boop!');
+		message.say('Boop!');
 	}
 };

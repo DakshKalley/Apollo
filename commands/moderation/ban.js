@@ -9,11 +9,19 @@ module.exports = class BanCommand extends Command {
             description: 'Bans a member.',
             guildOnly: true,
             clientPermissions: ['ADMINISTRATOR'],
-            userPermissions: ['BAN_MEMBERS'],
+			userPermissions: ['BAN_MEMBERS'],
+			args: [
+				{
+					type: "user",
+					prompt: "Which user do you want to ban?",
+					key: "user"
+				}
+			]
 		});
 	}
 
 	run(message) {
-		return message.say('Boop!');
+		message.guild.member(user).ban('Reason');
+		message.say(":hammer: | Banned " + user);
 	}
 };

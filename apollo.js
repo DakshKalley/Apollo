@@ -5,6 +5,7 @@ const client = new CommandoClient({
 	commandPrefix: 'a!',
 	owner: '266253148212035584',
 	invite: '',
+	unknownCommandResponse: false,
 });
 
 client.registry
@@ -12,6 +13,7 @@ client.registry
 	.registerGroups([
 		['default', 'Apollo\'s Default Commands'],
 		['moderation', 'Apollo\'s Moderation Commands'],
+		['fun', 'Apollo\'s Fun Commands']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()

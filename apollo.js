@@ -11,9 +11,10 @@ const client = new CommandoClient({
 client.registry
 	.registerDefaultTypes()
 	.registerGroups([
-		['default', 'Apollo\'s Default Commands'],
-		['moderation', 'Apollo\'s Moderation Commands'],
-		['fun', 'Apollo\'s Fun Commands']
+		['fun', 'Fun'],
+		['moderation', 'Moderation'],
+		['utility', 'Utility'],
+		['settings', 'Settings'],
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()

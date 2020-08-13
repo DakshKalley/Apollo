@@ -10,9 +10,9 @@ module.exports = class ClapCommand extends Command {
             args: [
                 {
                     key: 'text',
-                    prompt: 'What text would you like the bot to clap? (50 Words Max.)',
+                    prompt: 'What text would you like the bot to clap? (200 Characters Max.)',
                     type: 'string',
-                    validate: text => text.length < 51,
+                    validate: text => text.length < 201,
                 },
             ],
 		});

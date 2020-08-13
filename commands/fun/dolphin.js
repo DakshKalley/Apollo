@@ -10,9 +10,9 @@ module.exports = class DolphinCommand extends Command {
             args: [
                 {
                     key: 'text',
-                    prompt: 'What text would you like the bot to split between dolphins? (50 Words Max.)',
+                    prompt: 'What text would you like the bot to split between dolphins? (200 Characters Max.)',
                     type: 'string',
-                    validate: text => text.length < 51,
+                    validate: text => text.length < 201,
                 },
             ],
 		});

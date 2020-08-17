@@ -1,16 +1,24 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-
+const path = require('path');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
-}
+(function regCmd(dir = './commands') {
+	const commandFiles = fs.readdirSync(path.join(__dirname, dir));
+	for (let file of commandFiles) {
+		let stat = fs.lstatSync(path.join(__dirname, dir, file));
+		if (stat.isDirectory()) {
+			regCmd(path.join(dir, file));
+		} else {
+			if (file.endsWith('.js')) {
+				const command = require(path.join(__dirname, dir, file));
+				client.commands.set(command.name, command);
+			}
+		}
+	}
+})()
 
 const cooldowns = new Discord.Collection();
 
